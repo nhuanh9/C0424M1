@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="money">
+<select name="" id="from">
+    <option value="1">VN</option>
+    <option value="26000">USD</option>
+    <option value="1600">Yen</option>
+</select>
+<select name="" id="to">
+    <option value="1">VN</option>
+    <option value="26000">USD</option>
+    <option value="1600">Yen</option>
+</select>
+<button onclick="chuyen()">A</button>
+<h1 id="rs"></h1>
+<script>
+    function chuyen() {
+        let f = +document.getElementById('from').value;
+        let t = +document.getElementById('to').value;
+        let m = +document.getElementById('money').value;
+        document.getElementById('rs').innerHTML = m*f/t;
+    }
+</script>
+</body>
+</html>

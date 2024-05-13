@@ -10,7 +10,10 @@
 -->
 <input type="text" id="inp1">
 <input type="text" id="inp2">
-<button onclick="nhan()">A</button>
+<button onclick="nhan()">nhan</button>
+<button onclick="cong()">cong</button>
+<button onclick="tru()">tru</button>
+<button onclick="chia()">chia</button>
 <h1 id="rs"></h1>
 <script>
     // DOM: là 1 đối tượng để dùng JS tương tác với HTML
@@ -20,6 +23,27 @@
         let x = document.getElementById('inp1').value;
         let y = document.getElementById('inp2').value;
         document.getElementById('rs').innerHTML = x+'*'+y +'='+ x*y;
+        document.getElementById('inp1').value = ''
+        document.getElementById('inp2').value = ''
+    }
+    function tru() {
+        let x = document.getElementById('inp1').value;
+        let y = document.getElementById('inp2').value;
+        document.getElementById('rs').innerHTML = x+'-'+y +'='+ (x-y);
+        document.getElementById('inp1').value = ''
+        document.getElementById('inp2').value = ''
+    }
+    function chia() {
+        let x = document.getElementById('inp1').value;
+        let y = document.getElementById('inp2').value;
+        document.getElementById('rs').innerHTML = x+'/'+y +'='+ (x/y);
+        document.getElementById('inp1').value = ''
+        document.getElementById('inp2').value = ''
+    }
+    function cong() {
+        let x = +document.getElementById('inp1').value;
+        let y = +document.getElementById('inp2').value;
+        document.getElementById('rs').innerHTML = x+'+'+y +'='+ (x+y);
         document.getElementById('inp1').value = ''
         document.getElementById('inp2').value = ''
     }
