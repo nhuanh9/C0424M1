@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    10 nam
+    5 nu
+    5 cap khac gioi
+    (10-5)/2 cap dong gioi
+-->
+<script>
+    let nam = +prompt('Nhap vao so nam: ')
+    let nu = +prompt('Nhap vao so nu: ')
+    let dongGioi = 0
+    let khacGioi = 0;
+    if (nam > nu ) {
+        khacGioi = nu;
+        dongGioi = (nam-nu)/2
+    } else {
+        khacGioi = nam;
+        dongGioi = (nu-nam)/2
+    }
+</script>
+</body>
+</html>

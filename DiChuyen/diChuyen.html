@@ -8,8 +8,8 @@
 <img src="goku.png" alt="" style="width: 100px; top: 100px; left: 100px; position: absolute;" id="x">
 
 <script>
-    let v = 5;
-    let v1 = 5;
+    let v = 0;
+    let v1 = -5;
     setInterval(()=> {
         let anh = document.getElementById('x');
         anh.style.left = parseInt(anh.style.left) + v + 'px';
@@ -23,8 +23,25 @@
             v1 = -v1;
         }
     },1);
-    // Khi ảnh chạm cạnh phai thi no ngay lap tuc quay lai tu canh trai
-    // Khi ảnh chạm cạnh phai thi no ngay lap tuc quay dau
+    window.addEventListener('keydown', e => {
+        if (e.key === 'a') {
+           v = -5;
+           v1 = 0;
+        }
+        if (e.key === 'd') {
+            v = 5;
+            v1 = 0;
+        }
+        if (e.key === 'w') {
+           v = 0;
+           v1 = -5;
+        }
+        if (e.key === 's') {
+            v = 0;
+            v1 = 5;
+        }
+
+    } )
 </script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+
+Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+Nhap vao so luong hang da ban.
+sl < 1000: 3%
+sl < 5000: 5%
+sl >= 5000: 7%
+Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+Nhap sophut:
+sp < 10: 2000/p
+sp < 60: 2500/p
+sp > 60: 4000/p
+
+
+Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+
+-->
+<script>
+    let phut = +prompt('Nhap vao so phut: ');
+    let gia = 0;
+    if (phut < 10) {
+        gia = 2000;
+    }
+    if (phut >= 10 && phut < 60) {
+        gia = 2500
+    }
+    if (gia >= 60) {
+        gia = 4000;
+    }
+    alert(phut*gia)
+</script>
+</body>
+</html>

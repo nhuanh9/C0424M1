@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+Bài 10: Viết chương trình tính giá điện.
+Nhap vao so dien:
+Neu so
+0-100: 1600
+101-500: 2000
+501 -> ...:  4000
+-->
+<script>
+    let soDien = +prompt('Nhap vao so dien');
+    let tien = 0;
+    if (soDien <= 100) {
+        tien = soDien * 1600;
+    }
+    if (soDien > 100 && soDien <= 500) {
+        tien = (soDien - 100) * 2000 + 100 * 1600;
+    }
+    if (soDien > 500) {
+        tien = 100 * 1600 + 400 * 2000 + (soDien - 500) * 4000;
+    }
+    alert(tien);
+</script>
+</body>
+</html>

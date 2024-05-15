@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+x, y, n
+1: S1 = x + x*0.1 = x(1+0.1)
+2: S2 = S1 + S1 * 0.1 = S1(1+0.1) = x(1+0.1)(1+0.1)
+3: S3 = S2 + S2 * 0.1 = S2(1+0.1) = x(1+0.1)(1+0.1)(1+0.1)
+=> x (1+y)^n
+<script>
+    // Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu,
+    // Số tháng cho vay và lãi xuất hàng tháng.
+    //
+    let tienBanDau = +prompt('So tien ban dau: ');
+    let lai = +prompt('Lai 1 thang');
+    let soThang = +prompt('So thang');
+    alert(tienBanDau*(1+lai)**soThang);
+    // 3000/1.000.000/1 ngay: 0.3%: (1+0.003)^365
+</script>
+</body>
+</html>
