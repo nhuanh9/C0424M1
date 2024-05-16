@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // chi chia het cho 1 va chinh no
+    let a = +prompt('Nhap vao so: ');
+    let kq = 'La so nguyen to';
+    for (let i = 2; i < a; i++) {
+        if (a%i === 0) {
+            kq = 'K la so nguyen to';
+            break;
+        }
+    }
+    alert(kq)
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+while(x) {
+    A
+}
+A được lặp lại cho den khi x van dung
+x -> A -> x -> A ... -> End
+
+for (x; y; z) {
+    A;
+}
+x -> y -> A -> z -> y -> A -> z ... -> End
+
+let b = 5;
+while(b++>5) {
+    b++;
+}
+-->
+<script>
+    // In ra 100 lần chữ Hello
+    // In ra các so tu a -> b. a, b nhap vao = prompt
+    //  In ra các so chia het cho 3 tu a -> b. a, b nhap vao = prompt
+    // Tinh tong cac so tu a -> b
+    // Tinh tich cac so tu a -> b
+    // Dem cac so chia 5 du 2 tu a -> b
+    // Tinh TB cac so chia 5 du 2 tu a -> b
+    //  Nhập và a, b. In ra các số chính phương từ a đến b: 1-30: 1, 4, 9, 16, 25
+
+    let a = +prompt('Nhap a:'); // 1
+    a = Math.ceil(Math.sqrt(a));
+    let b = +prompt('Nhap b:'); // 1
+    b = Math.floor(Math.sqrt(b))
+    for (let i = a; i <= b; i++) { // 3
+        document.write(i * i + '<br>') // 1
+    }
+
+    // 1->100: 2 + 6 * 100 = 602
+    // 1->100: 2 + 6 * 10 = 64
+
+    // 2 => 1.41 => 2
+    // 101 => 10.01 => 10
+</script>
+</body>
+</html>
