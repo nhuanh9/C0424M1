@@ -6,16 +6,25 @@
 </head>
 <body>
 <script>
-    // chi chia het cho 1 va chinh no
-    let a = +prompt('Nhap vao so: ');
-    let kq = 'La so nguyen to';
-    for (let i = 2; i < a; i++) {
-        if (a%i === 0) {
-            kq = 'K la so nguyen to';
+    let dem = 0;
+    for (let x = 3;;x++){
+        let kq = true;
+        for (let i = 2; i <= Math.sqrt(x); i++) {
+            if (x%i === 0) {
+                kq = false;
+                break;
+            }
+        }
+        if (kq) {
+            document.write(x+'<br>')
+            dem++;
+        }
+        if (dem > 20) {
             break;
         }
     }
-    alert(kq)
+
+
 </script>
 </body>
 </html>

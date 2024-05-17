@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+   1 2 3 5 8 13 21 ...
+
+-->
+<script>
+    let a1 = 1;
+    let a2 = 2;
+    let dem = 2;
+    while (dem <= 10) {
+        document.write(a1+'<br>')
+        let x = a1 + a2;
+        a1 = a2;
+        a2 = x;
+        dem++;
+    }
+</script>
+</body>
+</html>
