@@ -1,7 +1,5 @@
-function averageArray(numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
-    }
-    return sum / numbers.length;
+function convert(price){
+    price = new Intl.NumberFormat("de-DE").format(price);
+    return price;
 }
+console.log(convert(1000));

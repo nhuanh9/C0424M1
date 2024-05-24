@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="rs"></div>
+<script>
+    // Phạm vi của biến(scoped)??? let - Block {} scoped và var - Function {} scoped
+    // Biến toàn cục: khai báo không nằm trong {} nào
+    // Biến cục bộ: khai báo trong 1 cặp ngoặc nhọn
+    class Person{
+        constructor(_name){
+            this.name = _name;
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+        walk() {
+            document.write(this.name+' đang di chuyển');
+        }
+    }
+</script>
+</body>
+</html>

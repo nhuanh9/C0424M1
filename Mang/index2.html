@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Nhap vao n la so phan tu trong mang, nhap vao n phan tu => Tinh tong
+    // let n = +prompt('Nhap vao so luong: ');
+    // let arr = [];
+    // for (let i = 0; i <n ; i++) {
+    //     let ele = +prompt('Nhap vao phan tu thu '+i);
+    //     arr.push(ele)
+    // }
+    // document.write(arr)
+
+    // Nhap vao cac phan tu cua mang cho den khi nhap -1 => Tinh tong
+    let brr = [];
+    while (true) {
+        let ele = +prompt("Nhap vao di: ");
+        if (ele === -1) {
+            break;
+        }
+        brr.push(ele);
+    }
+    document.write(brr)
+</script>
+</body>
+</html>

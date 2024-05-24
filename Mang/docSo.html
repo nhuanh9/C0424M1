@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    1 -> Một
+    12 -> Mười hai
+    20 -> 2 mươi
+-->
+<script>
+    let donVi = ['Mươi', 'Một', 'Hai', 'Ba', 'Bốn', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín'];
+    let so = +prompt('Nhập vào số: ');
+    let kq = ''
+    if (so == 0) {
+        kq = 'Khong'
+    } else if (so < 10) {
+        kq = donVi[so];
+    } else if (so < 20) {
+        kq = 'Mười '
+        if (so % 10 !== 0) {
+            kq += donVi[so % 10];
+        }
+    }
+    document.write(kq);
+</script>
+</body>
+</html>

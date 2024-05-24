@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Lop Mouse: name, weight, isDie-->
+<!--getI4(): hiện thông tin-->
+<!--Lop Cat: name, weight-->
+<!--getI4(): hiện thông tin-->
+<!--eat(m):-->
+<!-- - khi mèo ăn chuột thì cân của mèo tăng = 0.5 cân nặng của chuột vừa ăn-->
+<!-- - khi bị mèo ăn, chuột die, câng nặng về 0-->
+<script>
+    class Mouse {
+        constructor(name, weight) {
+            this.name = name;
+            this.weight = weight;
+            this.isDie = false;
+        }
+
+        getI4() {
+            let str = this.isDie?'Da chet':'Song';
+            alert(this.name + ", " + this.weight + ", " + str);
+        }
+    }
+
+    class Cat {
+        constructor(name, weight) {
+            this.name = name;
+            this.weight = weight;
+        }
+
+        getI4() {
+            alert(this.name + ", " + this.weight)
+        }
+
+        eat(mou) {
+            this.weight += mou.weight / 2;
+            mou.isDie = true;
+            mou.weight = 0;
+        }
+    }
+    let c = new Cat("Tom", 10);
+    let m = new Mouse("Jerry", 2);
+    c.getI4();
+    m.getI4();
+    c.eat(m);
+    c.getI4();
+    m.getI4();
+    let m2 = {
+        name: 'Trang',
+        weight: 90,
+        isDie: false
+    }
+    c.eat(m2);
+    c.getI4();
+
+</script>
+</body>
+</html>

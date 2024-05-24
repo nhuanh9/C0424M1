@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function timSP(){
+        let listSPCoSan=cuaHangLoc.listSP;
+        let sanPhamMuonTim=document.getElementById("tim_SP").value;
+        if (sanPhamMuonTim=listSPCoSan.Ten)
+        {
+            document.getElementById("hienThi").innerHTML=`
+        <tr>
+            <td>${listSPCoSan.Ten}</td>
+            <td>${listSPCoSan.Gia}</td>
+            <td>${listSPCoSan.TenHang}</td>
+            <td><button onclick="xoaSP(${listSPCoSan})">Xoá Sản Phẩm</button></td>
+            <td><button onclick="hienFormUpdate(${listSPCoSan})"> Cập Nhật Mới  </button></td>
+        </tr>
+        `
+        }
+    }
+</script>
+</body>
+</html>

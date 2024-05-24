@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let listEng = ['Apple', 'Banana', 'Watermelon', 'Dragon fruit'];
+    let listVie = ['Táo', 'Chuối', 'Dưa Hấu', 'Thanh Long'];
+
+    function translate(eng) {
+        for (let i = 0; i < listEng.length; i++) {
+            if (listEng[i] === eng) {
+                return listVie[i];
+            }
+        }
+        return 'Không tìm thấy!';
+    }
+    alert(translate('Banana'))
+</script>
+</body>
+</html>

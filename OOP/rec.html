@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(cd, cr) {
+            this.cd = cd;
+            this.cr = cr;
+        }
+
+        getP() {
+            return 2 * (this.cd + this.cr)
+        }
+
+        getS() {
+            return this.cd * this.cr;
+        }
+    }
+    let r1 = new Rectangle(10, 5);
+    alert(r1.getP())
+</script>
+</body>
+</html>

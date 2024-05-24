@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+OOP: La cach lap trinh mo ta du lieu = cac doi tuong
+Doi tuong: 1 KDL co the co nhieu gia tri(thuoc tinh) va ham(phuong thuc) ben trong.
+-->
+<script>
+    let list = [
+        {
+            name: 'Ip',
+            price: 100,
+            quantity: 50
+        },
+        {
+            name: 'Ip12',
+            price: 89,
+            quantity: 100,
+            des: 'good'
+        },
+        {
+            name: 'Xiaomi',
+            price: 50,
+            quantity: 120
+        }
+    ]
+    for (let i = 0; i < list.length; i++) {
+        document.write(`${list[i].name}, ${list[i].price} <br>`)
+    }
+    // Tính tong gia tri kho
+    let tong = 0;
+    for (let i = 0; i < list.length; i++) {
+        tong += list[i].price * list[i].quantity;
+    }
+    document.write('Tong la: '+tong+'<br>');
+    // In ra cac san pham gia >= 100;
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].price >= 100) {
+            document.write(`${list[i].name}, ${list[i].price} <br>`)
+        }
+    }
+    // Nhap vao ten, hien ra san pham co ten da nhap
+    let ten = prompt("Nhap ten can tim");
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].name.toLowerCase().includes(ten.toLowerCase())) {
+            document.write(`${list[i].name}, ${list[i].price} <br>`)
+        }
+    }
+    'NAL'.includes('A')//true
+    'NAL'.includes('B')//false
+</script>
+</body>
+</html>
