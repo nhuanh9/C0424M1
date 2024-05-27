@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 2:
+    function insertNumberToArray(arr, x, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        }
+        arr.splice(index, 0, x);
+        return arr;
+    }
+
+    function insertNumberToArray2(arr, x, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        }
+        let brr = [];
+        for (let i = 0; i < index; i++) {
+            brr.push(arr[i]);
+        }
+        brr.push(x)
+        for (let i = index + 1; i < arr.length + 1; i++) {
+            brr.push(arr[i - 1]);
+        }
+        return brr;
+    }
+
+    alert(insertNumberToArray2([1, 2, 3, 4], 5, 2));
+</script>
+</body>
+</html>

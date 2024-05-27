@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(a) {
+        if (a < 2) {
+            return false;
+        }
+        if (a === 2) {
+            return true;
+        }
+        for (let i = 2; i < a; i++) {
+            if (a % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function sumOfListPrime(x) {
+        let tong = 0;
+        for (let i = 0; i <= x; i++) {
+            if (isPrime(i)) {
+                tong += i;
+            }
+        }
+        return tong;
+    }
+
+    // ten bien: danh tu, co nghia, tenBien
+    // ten ham: dong tu, co nghia, tenHam
+    // ten lop: danh tu, co nghia, TenLop
+</script>
+</body>
+</html>
