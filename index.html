@@ -2,109 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
-    <style>
-        #main-content{
-            display: flex;
-            gap: 20px;
-            justify-content: space-around;
-        }
-        .col-3{
-            min-width: 300px;
-            max-width: 320px;
-        }
-        @media (max-width: 991px) {
-            #main-content{
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="font/fontawesome-free-6.5.2/css/all.css" rel="stylesheet">
 </head>
 <body>
-<div id="main-content">
-    <div class="col-sm-12 col-md-4 col-1"></div>
-    <div class="col-sm-12 col-md-4 col-2"></div>
-    <div class="col-sm-12 col-md-4 col-3">
-        <div id="search_content">
-            <input type="text" value="" placeholder="Search.." name="search"></input>
-            <input id="btn-search" type="button" value="Search"></input>
+<div id="app-music">
+    <div id="bg-art"></div>
+    <div id="cd">
+        <img id="cd-image" src="../image/17U1K0XDSZQPOHZT.jpg" alt="img">
+    </div>
+    <div id="control-player">
+        <div id="controls">
+            <div id="infor-control">
+                <h2 id="track-name">Name song</h2>
+                <p id="singer-name">Tên ca sĩ</p>
+                <div id="time">
+                    <p id="time-update">00:00</p>
+                    <p id="time-currentSong">00:00</p>
+                </div>
+                <input id="progress" type="range" min="0" max="100" step="1" value="0">
+                <audio id="audio" src=""></audio>
+
+            </div>
+            <div id="btn-control">
+                <div id="repeat">
+                    <i class="fa-solid fa-repeat"></i>
+                </div>
+                <div id="backward">
+                    <i class="fa-solid fa-backward"></i>
+                </div>
+                <div id="playing">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div id="skip">
+                    <i class="fa-solid fa-forward"></i>
+                </div>
+                <div id="shuffle">
+                    <i class="fa-solid fa-shuffle"></i>
+                </div>
+            </div>
         </div>
-        <div id="result"></div>
+    </div>
+    <div id="list-song">
+
     </div>
 </div>
-<script>
-    axios.get('https://restcountries.com/v3.1/all?fields=name,area,population,flags').then(res=>{
-        let list = res.data;
-        let arrLength = list.length;
-        let html = '<table border="1px" width="400px">'
-        html += '<tr><th>Flag</th><th>Name</th><th>Area</th><th>Popullation</th></tr>'
-        for (let index = 0; index < arrLength; index++) {
-            html += '<tr>'+
-                '<td><img src="'+list[index].flags.png+
-                '" alt="'+list[index].name.common+' Logo" style="max-width: 50px" /></td>'+
-                '<td>'+list[index].name.common+'</td>'+
-                '<td>'+list[index].area+'</td>'+
-                '<td>'+list[index].population+'</td>'+
-                '</tr>';
-        }
-        html += '</table>';
-        document.querySelector('.col-1').innerHTML = html;
-        // Lấy ra các area đưa vào mảng:
-        let areaArr = [];
-        list.map((area)=>{
-            areaArr.push(area.area);
-        });
-        // Lấy ra area lớn nhất.
-        let areaMax = Math.max(...areaArr);
-        // Hàm trả về country name
-        // Lấy ra country có area lớn nhất.
-        let areaCoutryName = '';
-        list.map(area=>{
-
-            if(area.area === areaMax){
-                areaCoutryName = area.name.common;
-                return areaCoutryName;
-            }
-        });
-        let countryNameHtml = `<h2 class="country">Quốc gia có area lớn nhất: ${areaCoutryName}</h2>`;
-        // Lấy ra population đưa vào mảng.
-        let populationArr = [];
-        list.map((population)=>{
-            populationArr.push(population.population);
-        });
-        // Lấy ra population lớn nhất.
-        let populationMax = Math.max(...populationArr);
-        // Lấy ra population có area lớn nhất.
-        let areaCoutryName2 = '';
-        list.map(area=>{
-
-            if(area.population === populationMax){
-                areaCoutryName2 = area.name.common;
-                return areaCoutryName2;
-            }
-        });
-        countryNameHtml += `<h2 class="country">Quốc gia có population lớn nhất: ${areaCoutryName2}</h2>`;
-        document.querySelector('.col-2').innerHTML = countryNameHtml;
-        // Lấy ra giá trị nhập vào ô tìm kiếm
-        document.getElementById("btn-search").onclick =()=>{
-            document.getElementById('result').innerHTML='';
-            let key = document.querySelector('input').value.toLocaleUpperCase();
-            let searchResult = '';
-            list.map(country=>{
-                let countryName = country.name.common.toLocaleUpperCase();
-
-                if(countryName.indexOf(key) != -1){
-                    searchResult += '<p>'+country.name.common+'</p>';
-                }
-            });
-            console.log(searchResult);
-            document.getElementById('result').innerHTML=searchResult;
-        };
-    });
-</script>
+<script src="main.js"></script>
 </body>
 </html>

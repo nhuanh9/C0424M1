@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="ma">
+<input type="text" id="ten">
+<input type="text" id="hang">
+<input type="text" id="gia">
+<button onclick="add()">Them</button>
+<hr>
+<div id="dis">
+
+</div>
+<button onclick="sapXepGia()">Sap xep</button>
+<script>
+
+    class Phone {
+        constructor(ma, ten, hang, gia) {
+            this._ma = ma;
+            this._ten = ten;
+            this._hang = hang;
+            this._gia = gia;
+        }
+
+        get ma() {
+            return this._ma;
+        }
+
+        set ma(value) {
+            this._ma = value;
+        }
+
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get hang() {
+            return this._hang;
+        }
+
+        set hang(value) {
+            this._hang = value;
+        }
+
+        get gia() {
+            return this._gia;
+        }
+
+        set gia(value) {
+            this._gia = value;
+        }
+
+        toString() {
+            return this.ten + ', ' + this.gia + ', ' + this.hang;
+        }
+    }
+
+    let list = [
+        new Phone(1, 'A', 'A', 100),
+        new Phone(2, 'BBB', 'C', 200),
+        new Phone(3, 'BAA', 'B', 150),
+    ]
+
+    function showList() {
+        let str = '';
+        for (let i = 0; i < list.length; i++) {
+            str += list[i].toString() + '<br>'
+        }
+        document.getElementById('dis').innerHTML = str;
+    }
+
+    showList();
+
+    function sapXepGia() {
+        list.sort((a, b) => a.gia - b.gia)
+        showList();
+    }
+    function add() {
+        list.push(new Phone(
+            document.getElementById('ma').value,
+            document.getElementById('ten').value,
+            document.getElementById('hang').value,
+            document.getElementById('gia').value,
+        ))
+        showList();
+    }
+</script>
+</body>
+</html>
